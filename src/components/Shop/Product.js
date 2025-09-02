@@ -1,6 +1,19 @@
 import React, { Component } from 'react'
 
 export default class Product extends Component {
+
+    constructor(){
+        super()
+
+        this.clickHandler = this.clickHandler.bind(this)
+    }
+
+
+
+    clickHandler(){
+        this.props.onAddToCart(this.props)
+    }
+
     render() {
         return (
             <div className="shop-item">
@@ -10,7 +23,8 @@ export default class Product extends Component {
                     <span className="shop-item-price">{this.props.price} $</span>
                     <button
                         className="btn btn-primary shop-item-button"
-                        type="button">
+                        type="button"
+                        onClick={this.clickHandler}>
                         ADD TO CART
                     </button>
                 </div>

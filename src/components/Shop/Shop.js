@@ -19,6 +19,7 @@ export default class Shop extends Component {
             ],
 
             shoppingCart: [],
+            
             socials: [
                 { id: 1, href: 'https://www.youtube.com', img: 'Images/YouTube Logo.png' },
                 { id: 2, href: 'https://www.spotify.com', img: 'Images/Spotify Logo.png' },
@@ -26,17 +27,16 @@ export default class Shop extends Component {
             ],
         }
 
-        // this.productHandler = this.productHandler.bind(this)
+        this.sendProductToCart = this.sendProductToCart.bind(this)
     }
 
-    // productHandler(){
+    sendProductToCart(product){
+        console.log(product);
+        
+        
+    }
 
-    //     let {id, title, price, img} = this.state.products
 
-    //     this.state.products.map(product => (
-            
-    //     ))
-    // }
 
 
     render() {
@@ -56,9 +56,8 @@ export default class Shop extends Component {
                 <section className="container content-section">
                     <div className="shop-items">
                         {this.state.products.map(product => (
-                            <Product {...product}/>
+                            <Product {...product} onAddToCart={this.sendProductToCart}/>
                         ))}
-                        
                     </div>
                 </section>
 
