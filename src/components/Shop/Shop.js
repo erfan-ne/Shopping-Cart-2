@@ -26,8 +26,17 @@ export default class Shop extends Component {
             ],
         }
 
-
+        // this.productHandler = this.productHandler.bind(this)
     }
+
+    // productHandler(){
+
+    //     let {id, title, price, img} = this.state.products
+
+    //     this.state.products.map(product => (
+            
+    //     ))
+    // }
 
 
     render() {
@@ -43,12 +52,16 @@ export default class Shop extends Component {
                     </nav>
                     <h1 className="band-name band-name-large">SabzLearn Shop</h1>
                 </header>
+
                 <section className="container content-section">
                     <div className="shop-items">
-
-                        <Product />
+                        {this.state.products.map(product => (
+                            <Product {...product}/>
+                        ))}
+                        
                     </div>
                 </section>
+
                 <section className="container content-section">
                     <h2 className="section-header">CART</h2>
                     <div className="cart-row">
