@@ -4,8 +4,8 @@ export default class Social extends Component {
     render() {
         return (
             <li>
-                <a href="sabzlearn.ir" target="_blank">
-                    <img src="Images/YouTube Logo.png" alt='social' />
+                <a href={this.props.href} target="_blank">
+                    <img src={this.props.img} alt='social' />
                 </a>
             </li>
         )
