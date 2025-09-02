@@ -36,6 +36,11 @@ export default class Shop extends Component {
         ))
     }
 
+    removeFromCart (product){
+        console.log(product);
+        
+    }
+
 
 
 
@@ -56,7 +61,7 @@ export default class Shop extends Component {
                 <section className="container content-section">
                     <div className="shop-items">
                         {this.state.products.map(product => (
-                            <Product {...product} onAddToCart={this.sendProductToCart}/>
+                            <Product {...product} key={product.id} onAddToCart={this.sendProductToCart}/>
                         ))}
                     </div>
                 </section>
@@ -71,7 +76,7 @@ export default class Shop extends Component {
                     <div className="cart-items">
 
                         {this.state.shoppingCarts.map(cart => (
-                            <CartProduct {...cart}/>
+                            <CartProduct {...cart} key={cart.id} onRemoveFromCart={this.removeFromCart}/>
                         ))}
                         
 

@@ -8,8 +8,6 @@ export default class Product extends Component {
         this.clickHandler = this.clickHandler.bind(this)
     }
 
-
-
     clickHandler(){
         this.props.onAddToCart(this.props)
     }
