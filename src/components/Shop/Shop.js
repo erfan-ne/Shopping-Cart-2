@@ -19,7 +19,7 @@ export default class Shop extends Component {
             ],
 
             shoppingCart: [],
-            
+
             socials: [
                 { id: 1, href: 'https://www.youtube.com', img: 'Images/YouTube Logo.png' },
                 { id: 2, href: 'https://www.spotify.com', img: 'Images/Spotify Logo.png' },
@@ -31,9 +31,9 @@ export default class Shop extends Component {
     }
 
     sendProductToCart(product){
-        console.log(product);
-        
-        
+        this.setState(prevState=>(
+            {shoppingCart: [...prevState.shoppingCart, product]}
+        ))
     }
 
 
