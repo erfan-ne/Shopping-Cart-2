@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
 
 export default class Product extends Component {
-    
-    // constructor(props){
-    //     super(props)
-
-    //     const props = ...props
-    // }
-
     render() {
         return (
             <div className="shop-item">
