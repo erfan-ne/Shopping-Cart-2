@@ -18,7 +18,7 @@ export default class Shop extends Component {
                 { id: 6, title: 'Shirt', price: 50, img: 'Images/Shirt.png' },
             ],
 
-            shoppingCart: [],
+            shoppingCarts: [],
 
             socials: [
                 { id: 1, href: 'https://www.youtube.com', img: 'Images/YouTube Logo.png' },
@@ -32,7 +32,7 @@ export default class Shop extends Component {
 
     sendProductToCart(product){
         this.setState(prevState=>(
-            {shoppingCart: [...prevState.shoppingCart, product]}
+            {shoppingCarts: [...prevState.shoppingCarts, product]}
         ))
     }
 
@@ -70,7 +70,10 @@ export default class Shop extends Component {
                     </div>
                     <div className="cart-items">
 
-                        <CartProduct />
+                        {this.state.shoppingCarts.map(cart => (
+                            <CartProduct {...cart}/>
+                        ))}
+                        
 
 
                     </div>
