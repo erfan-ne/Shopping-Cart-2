@@ -2,10 +2,13 @@ import React, { Component } from 'react'
 
 export default class Social extends Component {
     render() {
+
+        let {href, img} = this.props
+
         return (
             <li>
-                <a href={this.props.href} target="_blank">
-                    <img src={this.props.img} alt='social' />
+                <a href={href} target="_blank">
+                    <img src={img} alt='social' />
                 </a>
             </li>
         )
