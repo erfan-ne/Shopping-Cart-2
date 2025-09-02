@@ -41,7 +41,6 @@ export default class Shop extends Component {
 
         let newShoppingCart = [...this.state.shoppingCarts]
         
-        // console.log(newShoppingCart);
         
         let updateShoppingCart = newShoppingCart.findIndex((product)=>product.id === productId)
 
@@ -51,17 +50,6 @@ export default class Shop extends Component {
         this.setState(
             {shoppingCarts: newShoppingCart}
         )
-
-        console.log(newShoppingCart);
-        
-
-        // this.setState(
-        //     {shoppingCarts: updateShoppingCart}
-        // )
-
-        
-        // this.state.shoppingCarts.splice(productSelected, 1)
-
     }
 
 
