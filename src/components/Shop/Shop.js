@@ -29,6 +29,7 @@ export default class Shop extends Component {
 
         this.sendProductToCart = this.sendProductToCart.bind(this)
         this.removeFromCart = this.removeFromCart.bind(this)
+        this.emptyCart = this.emptyCart.bind(this)
     }
 
     sendProductToCart(product){
@@ -41,10 +42,8 @@ export default class Shop extends Component {
 
         let newShoppingCart = [...this.state.shoppingCarts]
         
-        
         let updateShoppingCart = newShoppingCart.findIndex((product)=>product.id === productId)
 
-        
         newShoppingCart.splice(updateShoppingCart, 1)
 
         this.setState(
@@ -52,7 +51,12 @@ export default class Shop extends Component {
         )
     }
 
+    emptyCart () {
+        this.setState(
+            {shoppingCarts: []}
+        )
 
+    }
 
 
     render() {
@@ -93,7 +97,7 @@ export default class Shop extends Component {
 
 
                     </div>
-                    <button className="btn btn-primary btn-purchase" type="button">
+                    <button className="btn btn-primary btn-purchase" type="button" onClick={this.emptyCart}>
                         Empty Cart
                     </button>
                 </section>
