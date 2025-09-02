@@ -28,6 +28,7 @@ export default class Shop extends Component {
         }
 
         this.sendProductToCart = this.sendProductToCart.bind(this)
+        this.removeFromCart = this.removeFromCart.bind(this)
     }
 
     sendProductToCart(product){
@@ -36,9 +37,31 @@ export default class Shop extends Component {
         ))
     }
 
-    removeFromCart (product){
-        console.log(product);
+    removeFromCart (productId){
+
+        let newShoppingCart = [...this.state.shoppingCarts]
         
+        // console.log(newShoppingCart);
+        
+        let updateShoppingCart = newShoppingCart.findIndex((product)=>product.id === productId)
+
+        
+        newShoppingCart.splice(updateShoppingCart, 1)
+
+        this.setState(
+            {shoppingCarts: newShoppingCart}
+        )
+
+        console.log(newShoppingCart);
+        
+
+        // this.setState(
+        //     {shoppingCarts: updateShoppingCart}
+        // )
+
+        
+        // this.state.shoppingCarts.splice(productSelected, 1)
+
     }
 
 
