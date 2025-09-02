@@ -6,7 +6,7 @@ export default class Social extends Component {
         return (
             <li>
                 <a href="sabzlearn.ir" target="_blank">
-                    <img src="Images/YouTube Logo.png" />
+                    <img src="Images/YouTube Logo.png" alt='social' />
                 </a>
             </li>
         )
