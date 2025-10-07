@@ -70,7 +70,7 @@ export default class Shop extends Component {
                             <li><a href="#">ABOUT</a></li>
                         </ul>
                     </nav>
-                    <h1 className="band-name band-name-large">SabzLearn Shop</h1>
+                    <h1 className="band-name band-name-large">Shopping Cart</h1>
                 </header>
 
                 <section className="container content-section">
