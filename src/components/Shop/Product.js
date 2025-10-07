@@ -1,14 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Product extends Component {
+export default function Product () {
 
-    constructor(){
-        super()
-
-        this.clickHandler = this.clickHandler.bind(this)
-    }
-
-    clickHandler(){
+    const clickHandler(){
         this.props.onAddToCart(this.props)
     }
 
