@@ -3,7 +3,7 @@ import Product from './Product'
 import CartProduct from './CartProduct'
 import Social from './Social'
 
-export default class Shop extends Component {
+export default function Shop () {
 
     constructor(props) {
         super(props)
@@ -58,8 +58,6 @@ export default class Shop extends Component {
 
     }
 
-
-    render() {
         return (
             <>
                 <header className="main-header">
@@ -117,4 +115,3 @@ export default class Shop extends Component {
             </>
         )
     }
-}
