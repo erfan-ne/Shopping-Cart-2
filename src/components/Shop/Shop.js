@@ -5,7 +5,7 @@ import Social from './Social'
 
 export default function Shop () {
 
-    const [product, setProduct] = useState([
+    const [products, setProducts] = useState([
         { id: 1, title: 'Album 1', price: 5, img: 'Images/Album 1.png' },
         { id: 2, title: 'Album 2', price: 15, img: 'Images/Album 2.png' },
         { id: 3, title: 'Album 3', price: 20, img: 'Images/Album 3.png' },
@@ -31,7 +31,7 @@ export default function Shop () {
 
     const removeFromCart = (productId) => {
 
-        let newShoppingCart = [...this.state.shoppingCarts]
+        let newShoppingCart = [...shoppingCarts]
         
         let updateShoppingCart = newShoppingCart.findIndex((product)=>product.id === productId)
 
@@ -64,7 +64,7 @@ export default function Shop () {
 
                 <section className="container content-section">
                     <div className="shop-items">
-                        {this.state.products.map(product => (
+                        {products.map(product => (
                             <Product {...product} key={product.id} onAddToCart={this.sendProductToCart}/>
                         ))}
                     </div>
@@ -79,7 +79,7 @@ export default function Shop () {
                     </div>
                     <div className="cart-items">
 
-                        {this.state.shoppingCarts.map(cart => (
+                        {shoppingCarts.map(cart => (
                             <CartProduct {...cart} key={cart.id} onRemoveFromCart={this.removeFromCart}/>
                         ))}
                         
@@ -94,7 +94,7 @@ export default function Shop () {
                     <div className="container main-footer-container">
                         <h3 className="band-name">The Generics</h3>
                         <ul className="nav footer-nav">
-                            {this.state.socials.map(social=>(
+                            {socials.map(social=>(
                                 <Social {...social} key={social.id}/>
                             ))}
                             
