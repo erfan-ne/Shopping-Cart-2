@@ -39,10 +39,7 @@ export default function Shop () {
     }
 
     const emptyCart = () => {
-        this.setState(
-            {shoppingCarts: []}
-        )
-
+        setShoppingCarts([])
     }
 
         return (
