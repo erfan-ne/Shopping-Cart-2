@@ -1,36 +1,27 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Product from './Product'
 import CartProduct from './CartProduct'
 import Social from './Social'
 
 export default function Shop () {
 
-    constructor(props) {
-        super(props)
+    const [product, setProduct] = useState([
+        { id: 1, title: 'Album 1', price: 5, img: 'Images/Album 1.png' },
+        { id: 2, title: 'Album 2', price: 15, img: 'Images/Album 2.png' },
+        { id: 3, title: 'Album 3', price: 20, img: 'Images/Album 3.png' },
+        { id: 4, title: 'Album 4', price: 100, img: 'Images/Album 4.png' },
+        { id: 5, title: 'Coffee', price: 5, img: 'Images/Cofee.png' },
+        { id: 6, title: 'Shirt', price: 50, img: 'Images/Shirt.png' },
+    ])
 
-        this.state = {
-            products: [
-                { id: 1, title: 'Album 1', price: 5, img: 'Images/Album 1.png' },
-                { id: 2, title: 'Album 2', price: 15, img: 'Images/Album 2.png' },
-                { id: 3, title: 'Album 3', price: 20, img: 'Images/Album 3.png' },
-                { id: 4, title: 'Album 4', price: 100, img: 'Images/Album 4.png' },
-                { id: 5, title: 'Coffee', price: 5, img: 'Images/Cofee.png' },
-                { id: 6, title: 'Shirt', price: 50, img: 'Images/Shirt.png' },
-            ],
+    const [shoppingCarts, setShoppingCarts] = useState([])
 
-            shoppingCarts: [],
+    const [socials, setSocials] = useState([
+        { id: 1, href: 'https://www.youtube.com', img: 'Images/YouTube Logo.png' },
+        { id: 2, href: 'https://www.spotify.com', img: 'Images/Spotify Logo.png' },
+        { id: 3, href: 'https://www.facebook.com', img: 'Images/Facebook Logo.png' }
+    ])
 
-            socials: [
-                { id: 1, href: 'https://www.youtube.com', img: 'Images/YouTube Logo.png' },
-                { id: 2, href: 'https://www.spotify.com', img: 'Images/Spotify Logo.png' },
-                { id: 3, href: 'https://www.facebook.com', img: 'Images/Facebook Logo.png' },
-            ],
-        }
-
-        this.sendProductToCart = this.sendProductToCart.bind(this)
-        this.removeFromCart = this.removeFromCart.bind(this)
-        this.emptyCart = this.emptyCart.bind(this)
-    }
 
     sendProductToCart(product){
         this.setState(prevState=>(
