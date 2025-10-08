@@ -24,9 +24,7 @@ export default function Shop () {
 
 
     const sendProductToCart = (product) => {
-        this.setState(prevState=>(
-            {shoppingCarts: [...prevState.shoppingCarts, product]}
-        ))
+        setShoppingCarts((prevState) => [...prevState.shoppingCarts, product])
     }
 
     const removeFromCart = (productId) => {
