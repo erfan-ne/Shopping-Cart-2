@@ -24,7 +24,7 @@ export default function Shop () {
 
 
     const sendProductToCart = (product) => {
-        setShoppingCarts((prevState) => [...prevState.shoppingCarts, product])
+        setShoppingCarts((prevState) => [...prevState, product])
     }
 
     const removeFromCart = (productId) => {
@@ -35,9 +35,7 @@ export default function Shop () {
 
         newShoppingCart.splice(updateShoppingCart, 1)
 
-        this.setState(
-            {shoppingCarts: newShoppingCart}
-        )
+        setShoppingCarts(newShoppingCart)
     }
 
     const emptyCart = () => {
@@ -63,7 +61,7 @@ export default function Shop () {
                 <section className="container content-section">
                     <div className="shop-items">
                         {products.map(product => (
-                            <Product {...product} key={product.id} onAddToCart={this.sendProductToCart}/>
+                            <Product {...product} key={product.id} onAddToCart={sendProductToCart}/>
                         ))}
                     </div>
                 </section>
@@ -78,13 +76,13 @@ export default function Shop () {
                     <div className="cart-items">
 
                         {shoppingCarts.map(cart => (
-                            <CartProduct {...cart} key={cart.id} onRemoveFromCart={this.removeFromCart}/>
+                            <CartProduct {...cart} key={cart.id} onRemoveFromCart={removeFromCart}/>
                         ))}
                         
 
 
                     </div>
-                    <button className="btn btn-primary btn-purchase" type="button" onClick={this.emptyCart}>
+                    <button className="btn btn-primary btn-purchase" type="button" onClick={emptyCart}>
                         Empty Cart
                     </button>
                 </section>
