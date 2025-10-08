@@ -23,13 +23,13 @@ export default function Shop () {
     ])
 
 
-    sendProductToCart(product){
+    const sendProductToCart = (product) => {
         this.setState(prevState=>(
             {shoppingCarts: [...prevState.shoppingCarts, product]}
         ))
     }
 
-    removeFromCart (productId){
+    const removeFromCart = (productId) => {
 
         let newShoppingCart = [...this.state.shoppingCarts]
         
@@ -42,7 +42,7 @@ export default function Shop () {
         )
     }
 
-    emptyCart () {
+    const emptyCart = () => {
         this.setState(
             {shoppingCarts: []}
         )
